@@ -6,7 +6,7 @@ public abstract class SymbolBase : MonoBehaviour {
 
 	protected abstract void Init ();
 
-	protected abstract void SetSymbol ();
+	protected abstract void SetSymbol (HackSymbol symbol);
 
 	protected abstract bool IsEquals();
 		
