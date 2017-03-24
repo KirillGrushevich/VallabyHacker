@@ -1,8 +1,13 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\VallabyHacker\NumberSymbol.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\VallabyHacker\ImageSymbol.cs">
     <Files>
-      <File FileName="Assets\Scripts\VallabyHacker\NumberSymbol.cs" Line="15" Column="3" />
+      <File FileName="Assets\Scripts\VallabyHacker\SymbolBase.cs" Line="15" Column="2" />
+      <File FileName="Assets\Scripts\VallabyHacker\NumberSymbol.cs" Line="12" Column="1" />
+      <File FileName="Assets\Scripts\VallabyHacker\ImageSymbol.cs" Line="6" Column="2" />
+      <File FileName="Assets\Scripts\VallabyHacker\ColorSymbol.cs" Line="19" Column="15" />
+      <File FileName="Assets\Scripts\VallabyHacker\HackSymbol_Color.cs" Line="22" Column="26" />
+      <File FileName="Assets\Scripts\VallabyHacker\HackSymbol.cs" Line="18" Column="11" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

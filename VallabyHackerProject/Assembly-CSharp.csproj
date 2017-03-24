@@ -49,6 +49,7 @@
      <Compile Include="Assets\Scripts\VallabyHacker\ColorSymbol.cs" />
      <Compile Include="Assets\Scripts\VallabyHacker\FieldElement.cs" />
      <Compile Include="Assets\Scripts\VallabyHacker\HackSymbol.cs" />
+     <Compile Include="Assets\Scripts\VallabyHacker\HackSymbol_Color.cs" />
      <Compile Include="Assets\Scripts\VallabyHacker\ImageSymbol.cs" />
      <Compile Include="Assets\Scripts\VallabyHacker\NumberSymbol.cs" />
      <Compile Include="Assets\Scripts\VallabyHacker\SymbolBase.cs" />

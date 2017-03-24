@@ -2,8 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ImageSymbol : MonoBehaviour {
+public class ImageSymbol : SymbolBase {
 
-	void Init(){
+	public override void SetSymbol (HackSymbol symbol)
+	{
+		base.SetSymbol (symbol);
+
 	}
 }
