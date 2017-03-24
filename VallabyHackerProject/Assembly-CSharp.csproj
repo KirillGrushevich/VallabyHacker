@@ -46,7 +46,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\ColorSymbol.cs" />
      <Compile Include="Assets\Scripts\HackSymbol.cs" />
+     <Compile Include="Assets\Scripts\ImageSymbol.cs" />
+     <Compile Include="Assets\Scripts\NumberSymbol.cs" />
      <Compile Include="Assets\Scripts\SymbolBase.cs" />
      <Compile Include="Assets\Scripts\VallabyHacker\VallabyHackerController.cs" />
  <Reference Include="UnityEngine.UI">
