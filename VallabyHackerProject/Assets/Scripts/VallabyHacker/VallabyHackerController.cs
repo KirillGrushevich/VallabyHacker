@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class VallabyHackerController : MonoBehaviour {
+public class VallabyHackerController : MonoBehaviour 
+{
 
 	// Use this for initialization
 	void Start () {
@@ -13,4 +14,16 @@ public class VallabyHackerController : MonoBehaviour {
 	void Update () {
 		
 	}
+
+	public void StartMinigame()
+	{
+
+	}
+
+	private void generateSymbols()
+	{
+		
+	}
+
+
 }
