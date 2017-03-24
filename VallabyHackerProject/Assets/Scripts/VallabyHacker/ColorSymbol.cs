@@ -6,11 +6,4 @@ public class ColorSymbol : MonoBehaviour {
 
 	void Init(){
 	}
-
-	void SetSymbol(HackSymbol symbol){
-	}
-
-	bool IsEquals(){
-		return true;
-	}
 }
