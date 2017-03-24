@@ -4,10 +4,18 @@ using UnityEngine;
 
 public abstract class SymbolBase : MonoBehaviour {
 
+	private HackSymbol symbol;
+
 	protected abstract void Init ();
 
-	protected abstract void SetSymbol (HackSymbol symbol);
+	protected void SetSymbol (HackSymbol symbol)
+	{
+		this.symbol = symbol;
+	}
 
-	protected abstract bool IsEquals();
+	protected bool IsEquals(HackSymbol symbol)
+	{
+		return this.symbol == symbol;
+	}
 		
 }

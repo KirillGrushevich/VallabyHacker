@@ -47,11 +47,13 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\VallabyHacker\ColorSymbol.cs" />
+     <Compile Include="Assets\Scripts\VallabyHacker\FieldElement.cs" />
      <Compile Include="Assets\Scripts\VallabyHacker\HackSymbol.cs" />
      <Compile Include="Assets\Scripts\VallabyHacker\ImageSymbol.cs" />
      <Compile Include="Assets\Scripts\VallabyHacker\NumberSymbol.cs" />
      <Compile Include="Assets\Scripts\VallabyHacker\SymbolBase.cs" />
      <Compile Include="Assets\Scripts\VallabyHacker\VallabyHackerController.cs" />
+     <Compile Include="Assets\Scripts\VallabyHacker\VallabyHackerGameField.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>D:/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
