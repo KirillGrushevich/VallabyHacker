@@ -1,9 +1,7 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
+﻿
 public enum HackSymbol {
 
+	Element0,
 	Element1,
 	Element2,
 	Element3,
@@ -17,6 +15,5 @@ public enum HackSymbol {
 	Element11,
 	Element12,
 	Element13,
-	Element14,
-	Element15,
+	Element14
 }

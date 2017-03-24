@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NumberSymbol : MonoBehaviour {
+public class NumberSymbol : SymbolBase {
 
-	void Init(){
+	public override void SetSymbol (HackSymbol symbol)
+	{
+		base.SetSymbol (symbol);
+
 	}
-
 }

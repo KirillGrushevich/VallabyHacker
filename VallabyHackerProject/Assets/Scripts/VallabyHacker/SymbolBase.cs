@@ -6,14 +6,14 @@ public abstract class SymbolBase : MonoBehaviour {
 
 	private HackSymbol symbol;
 
-	protected abstract void Init ();
+	public virtual void Init (){}
 
-	protected void SetSymbol (HackSymbol symbol)
+	public virtual void SetSymbol (HackSymbol symbol)
 	{
 		this.symbol = symbol;
 	}
 
-	protected bool IsEquals(HackSymbol symbol)
+	public virtual bool IsEquals(HackSymbol symbol)
 	{
 		return this.symbol == symbol;
 	}
