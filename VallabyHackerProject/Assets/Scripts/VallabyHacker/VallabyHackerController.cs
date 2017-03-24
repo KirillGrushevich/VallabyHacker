@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class VallabyHackerController : MonoBehaviour 
 {
+	[SerializeField]
+	private GameObject[] m_Symbols;
 
 	// Use this for initialization
 	void Start () {
