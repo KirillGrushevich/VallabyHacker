@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class ImageSymbol : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
+	void Init(){
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
+
+	void SetSymbol(HackSymbol symbol){
+	}
+
+	bool IsEquals(){
+		return true;
 	}
 }
