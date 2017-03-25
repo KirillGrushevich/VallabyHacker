@@ -12,12 +12,12 @@ public class VallabyHackerController : MonoBehaviour
 	private VallabyHackerGameField m_Field;
 
     [SerializeField]
-    private Image m_resultImage;
+    private TopLampManager m_Lamps;
 
 	[SerializeField]
 	private Text m_timer;
 
-	private int missCounter = -1;
+	private int missCounter = 0;
 	private int winCounter = 0;
 
 	private int stage;
@@ -30,7 +30,7 @@ public class VallabyHackerController : MonoBehaviour
 	private void Start () 
 	{
 		hackCoroutine = null;
-		missCounter = -1;
+		missCounter = 0;
 		winCounter = 0;
 		stage = 0;
         GameSwipeDetection.SwipeAction += swipeEvent;		
@@ -50,7 +50,8 @@ public class VallabyHackerController : MonoBehaviour
 		if(hackCoroutine == null && Input.GetMouseButtonDown(0))
 		{
 			hackCoroutine =  StartCoroutine(hackRoutine(0.5f));
-		}					
+		}
+		
 	}
 
 	private void generateSymbols()
@@ -67,25 +68,18 @@ public class VallabyHackerController : MonoBehaviour
         if (!isBreak)
         {
             bool isEquals = m_Field.isIsEquals();
-            Color clr = Color.red;
+            bool isComplete = false;
             if (dir < 0 && isEquals || dir > 0 && !isEquals)
             {
-                clr = Color.green;
+                isComplete = true;
                 winCounter++;
             }
             else missCounter++;
 
-            m_resultImage.color = clr;
+            m_Lamps.EnableNextLamp(isComplete);
 
-            if (missCounter >= 2)
-            {
-                endHack(false);
-                return;
-            }
-
-            if (winCounter + missCounter >= 5)
-            {
-                endHack(true);
+            if (isEnd())
+            {				
                 return;
             }
 
@@ -112,7 +106,7 @@ public class VallabyHackerController : MonoBehaviour
         {
             float _timer = 3f;
             while (_timer > 0)
-            {
+            {				
 				if(isBreak)
 				{
 					m_timer.text = "";
@@ -129,21 +123,38 @@ public class VallabyHackerController : MonoBehaviour
 					m_timer.text = b.ToString();
 					yield return null;
 				}
-
             }
-			
+
+
             m_timer.text = "";
             missCounter++;
-            if (missCounter > 1)
+
+            if (!isEnd())
             {
-                endHack(false);
-                break;
+                m_Lamps.EnableNextLamp(false);
+                m_Field.ClearField();
+                yield return new WaitForSeconds(2f);
+                generateSymbols();
             }
-
-			m_Field.ClearField();
-			yield return new WaitForSeconds(2f);
-			generateSymbols();
-
         }
+    }
+
+    private bool isEnd()
+    {
+        if (missCounter > 1)
+        {
+            endHack(false);
+			m_Lamps.EnableNextLamp(false);
+			StopAllCoroutines();
+			m_timer.text = "";
+            return true;
+        }
+
+        if (winCounter + missCounter >= 5)
+        {
+            endHack(true);
+            return true;
+        }
+        return false;
     }
 }

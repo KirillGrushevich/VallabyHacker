@@ -9,7 +9,7 @@ public class TopLampManager : MonoBehaviour {
 
 	private int currentLamp = 0;
 
-	void EnableNextLamp (bool state) 
+	public void EnableNextLamp (bool state) 
 	{
 		if (state) 
 		{
