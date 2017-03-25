@@ -12,13 +12,16 @@ public class ColorSymbol : SymbolBase {
 		base.SetSymbol (symbol);
 
 		color = HackSymbol_Color.Colors [(int)symbol];
+//		Debug.Log ((int)symbol);
 
 		GetComponent<Image> ().color = color;
+//		Debug.Log (GetComponent<Image> ().color);
 	}
 
 	void Update()
 	{
-		if (Input.anyKeyDown)
-			SetSymbol (HackSymbol.Element10);
+//		if (Input.GetButtonDown ("Fire1")) {
+//			SetSymbol (HackSymbol.Element7);
+//		}
 	}
 }
