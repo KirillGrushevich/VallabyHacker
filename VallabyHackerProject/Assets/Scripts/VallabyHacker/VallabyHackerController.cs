@@ -73,8 +73,13 @@ public class VallabyHackerController : MonoBehaviour
             {
                 isComplete = true;
                 winCounter++;
+				m_Field.ActivateResultText(true);
             }
-            else missCounter++;
+            else 
+			{
+				missCounter++;
+				m_Field.ActivateResultText(false);
+			}
 
             m_Lamps.EnableNextLamp(isComplete);
 
@@ -128,6 +133,7 @@ public class VallabyHackerController : MonoBehaviour
 
             m_timer.text = "";
             missCounter++;
+			m_Field.ActivateResultText(false);
 
             if (!isEnd())
             {

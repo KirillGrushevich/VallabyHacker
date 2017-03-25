@@ -14,8 +14,18 @@ public class VallabyHackerGameField : MonoBehaviour
     [SerializeField]
     private GameObject m_Background;
 
+    [SerializeField]
+    private GameObject m_WinText;
+    [SerializeField]
+    private GameObject m_LooseText;
+
     private List<GameObject> gameObjects = new List<GameObject>();
     private List<GameObject> playerObjects = new List<GameObject>();
+
+    private void Start()
+    {
+        m_Background.SetActive(false);
+    }
 
     public void GenerateStage(SymbolBase symbol, int key, bool isUnique)
 	{
@@ -140,6 +150,21 @@ public class VallabyHackerGameField : MonoBehaviour
             arr[i] = nm;
         }
         return arr;
+    }
+
+    public void ActivateResultText(bool isPositive)
+    {
+        if(isPositive)
+        {
+            m_WinText.SetActive(true);
+            DisableOnTime dis = m_WinText.AddComponent<DisableOnTime>();
+            dis.disableAt(2f);
+            return;
+        }
+        
+        m_LooseText.SetActive(true);
+        DisableOnTime _dis = m_LooseText.AddComponent<DisableOnTime>();
+        _dis.disableAt(2f);
     }
 
 

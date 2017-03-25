@@ -14,7 +14,7 @@ public class LoadText : MonoBehaviour
 	[SerializeField]
 	private float m_delayTime = 1.5f;
 
-	void Start () 
+	void OnEnable () 
 	{
 		text = GetComponent<Text> ();
 		StartCoroutine (AnimateText ());
