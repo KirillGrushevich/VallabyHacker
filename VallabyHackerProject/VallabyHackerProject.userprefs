@@ -1,15 +1,16 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\VallabyHacker\LoadText.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\VallabyHacker\RandomArray.cs">
     <Files>
-      <File FileName="Assets\Scripts\VallabyHacker\SymbolBase.cs" Line="16" Column="30" />
+      <File FileName="Assets\Scripts\VallabyHacker\SymbolBase.cs" Line="15" Column="41" />
       <File FileName="Assets\Scripts\VallabyHacker\NumberSymbol.cs" Line="12" Column="1" />
       <File FileName="Assets\Scripts\VallabyHacker\ImageSymbol.cs" Line="14" Column="56" />
       <File FileName="Assets\Scripts\VallabyHacker\ColorSymbol.cs" Line="25" Column="6" />
-      <File FileName="Assets\Scripts\VallabyHacker\HackSymbol_Color.cs" Line="5" Column="39" />
+      <File FileName="Assets\Scripts\VallabyHacker\HackSymbol_Color.cs" Line="6" Column="1" />
       <File FileName="Assets\Scripts\VallabyHacker\HackSymbol.cs" Line="18" Column="11" />
       <File FileName="..\..\..\Unity\Unity Projects\SpaceDash\Assets\Script\MovingObject.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\VallabyHacker\LoadText.cs" Line="30" Column="19" />
+      <File FileName="Assets\Scripts\VallabyHacker\LoadText.cs" Line="21" Column="1" />
+      <File FileName="Assets\Scripts\VallabyHacker\RandomArray.cs" Line="30" Column="5" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
