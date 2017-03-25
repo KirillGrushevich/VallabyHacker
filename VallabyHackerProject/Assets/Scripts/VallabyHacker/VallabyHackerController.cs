@@ -20,13 +20,19 @@ public class VallabyHackerController : MonoBehaviour
 	private int missCounter = -1;
 	private int winCounter = 0;
 
+	private int stage;
+	private bool[] stagesEquals;
+
 	// Use this for initialization
 	private void Start () 
 	{
 		missCounter = -1;
 		winCounter = 0;
+		stage = 0;
         GameSwipeDetection.SwipeAction += swipeEvent;
 		StartCoroutine(waitRoutine(3f));
+
+		stagesEquals = RandomArray.GetRandomArray(4);
         
 	}
 
@@ -48,11 +54,10 @@ public class VallabyHackerController : MonoBehaviour
 
 	private void generateSymbols()
 	{
-        bool isUnique = true;
-        if (Random.Range(0, 2) == 1)
-            isUnique = false;
+		
 
-		m_Field.GenerateStage(m_BaseSymbol.GetComponent<SymbolBase>(), Random.Range(0, 15), isUnique);
+		m_Field.GenerateStage(m_BaseSymbol.GetComponent<SymbolBase>(), Random.Range(0, 15), stagesEquals[stage]);
+		stage++;
 	}
 
     private void swipeEvent(float dir)
