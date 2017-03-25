@@ -34,27 +34,28 @@ public class TopLampManager : MonoBehaviour {
 		StartCoroutine (EndGameCourotine (state));
 	}
 
-	IEnumerator EndGameCourotine(bool state)
-	{
-		foreach (Image _image in images)
-		{
-			yield return new WaitForSeconds (m_delay);
+    IEnumerator EndGameCourotine(bool state)
+    {
+        while (true)
+        {
+            foreach (Image _image in images)
+            {
+                if (state)
+                {
+                    _image.color = Color.green;
+                }
+                else
+                {
+                    _image.color = Color.red;
+                }
 
-			if (state) 
-			{
-				_image.color = Color.green;	
-			} 
-			else 
-			{
-				_image.color = Color.red;	
-			}
+                _image.gameObject.SetActive(true);
+				yield return new WaitForSeconds(0.1f);
 
-			_image.gameObject.SetActive (true);
-		}
-	}
+            }
+            yield return null;
+        }
 
-	void Start()
-	{
-		SetEndGameLight (false);
-	}
+    }
+
 }

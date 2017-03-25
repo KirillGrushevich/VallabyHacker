@@ -150,7 +150,7 @@ public class VallabyHackerController : MonoBehaviour
         if (missCounter > 1)
         {
             endHack(false);
-			m_Lamps.EnableNextLamp(false);
+			m_Lamps.SetEndGameLight(false);
 			StopAllCoroutines();
 			m_timer.text = "";
             return true;
@@ -159,6 +159,7 @@ public class VallabyHackerController : MonoBehaviour
         if (winCounter + missCounter >= 5)
         {
             endHack(true);
+			m_Lamps.SetEndGameLight(true);
             return true;
         }
         return false;
