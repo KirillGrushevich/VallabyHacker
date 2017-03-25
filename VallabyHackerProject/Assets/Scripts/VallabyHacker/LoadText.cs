@@ -3,16 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class LoadText : MonoBehaviour {
-
+public class LoadText : MonoBehaviour 
+{
 	public TextAsset inputText;
-
 	private Text text;
-	private string loadText = "Loading...\n" +
-	                          "\n" +
-	                          ".../»\n" +
-	                          "Welcome to Wallaby Electronic System!\n" +
-	                          "Please, enter your graphical password.\n...";
+
+	[SerializeField]
+	private bool isDestroyOnTouch;
+
+	[SerializeField]
+	private float m_delayTime = 1.5f;
 
 	void Start () 
 	{
@@ -20,20 +20,22 @@ public class LoadText : MonoBehaviour {
 		StartCoroutine (AnimateText ());
 	}
 
+	void Update()
+	{
+		if(isDestroyOnTouch && Input.GetMouseButtonDown(0))
+		{
+			Destroy(gameObject);
+		}
+	}
+
 	IEnumerator AnimateText()
 	{
-		for (int i = 0; i < loadText.Length; i++) 
-		{
-			if (inputText == null) 
-			{
-				text.text = loadText.Substring (0, i);
-			} 
-			else 
-			{
-				text.text = inputText.text.Substring (0, i);
-			}
-			yield return new WaitForSeconds (.03f);
-		}
+		yield return new WaitForSeconds(m_delayTime);
+        for (int i = 0; i < inputText.text.Length; i++)
+        {
+            text.text = inputText.text.Substring(0, i);
+            yield return new WaitForSeconds(.03f);
+        }
 	}
 
 }

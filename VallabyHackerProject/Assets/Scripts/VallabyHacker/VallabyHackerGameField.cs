@@ -11,11 +11,15 @@ public class VallabyHackerGameField : MonoBehaviour
 	[SerializeField]
 	private FieldElement[] m_PlayerElements;
 
+    [SerializeField]
+    private GameObject m_Background;
+
     private List<GameObject> gameObjects = new List<GameObject>();
     private List<GameObject> playerObjects = new List<GameObject>();
 
     public void GenerateStage(SymbolBase symbol, int key, bool isUnique)
 	{
+        m_Background.SetActive(true);
         foreach(GameObject obj in gameObjects)
         {
             Destroy(obj);
@@ -28,7 +32,7 @@ public class VallabyHackerGameField : MonoBehaviour
         gameObjects = new List<GameObject>();
         playerObjects = new List<GameObject>();
 
-    int[] numbers = randomizer(m_GameElements.Length, key);
+        int[] numbers = randomizer(m_GameElements.Length, key);
 
         //Game field
         for (int i = 0; i < m_GameElements.Length; i++)
@@ -56,6 +60,7 @@ public class VallabyHackerGameField : MonoBehaviour
 
     public void ClearField()
     {
+         m_Background.SetActive(false);
         foreach(GameObject obj in gameObjects)
         {
             Destroy(obj);

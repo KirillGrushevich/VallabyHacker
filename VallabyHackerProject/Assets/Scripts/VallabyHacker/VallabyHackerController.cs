@@ -23,16 +23,19 @@ public class VallabyHackerController : MonoBehaviour
 	private int stage;
 	private bool[] stagesEquals;
 
+	Coroutine hackCoroutine;
+	bool isBreak;
+
 	// Use this for initialization
 	private void Start () 
 	{
+		hackCoroutine = null;
 		missCounter = -1;
 		winCounter = 0;
 		stage = 0;
-        GameSwipeDetection.SwipeAction += swipeEvent;
-		StartCoroutine(waitRoutine(3f));
+        GameSwipeDetection.SwipeAction += swipeEvent;		
 
-		stagesEquals = RandomArray.GetRandomArray(4);
+		stagesEquals = RandomArray.GetRandomArray(10);
         
 	}
 
@@ -44,76 +47,92 @@ public class VallabyHackerController : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
 	{
-
-	}
-
-	public void StartMinigame()
-	{
-
+		if(hackCoroutine == null && Input.GetMouseButtonDown(0))
+		{
+			hackCoroutine =  StartCoroutine(hackRoutine(0.5f));
+		}					
 	}
 
 	private void generateSymbols()
 	{
-		
-
-		m_Field.GenerateStage(m_BaseSymbol.GetComponent<SymbolBase>(), Random.Range(0, 8), stagesEquals[stage]);
-		stage++;
+		if(stage < 5)
+		{
+			m_Field.GenerateStage(m_BaseSymbol.GetComponent<SymbolBase>(), Random.Range(0, 8), stagesEquals[stage]);
+			stage++;
+		}
 	}
 
     private void swipeEvent(float dir)
     {
-        if (missCounter >= 0)
+        if (!isBreak)
         {
             bool isEquals = m_Field.isIsEquals();
             Color clr = Color.red;
             if (dir < 0 && isEquals || dir > 0 && !isEquals)
-			{
- 				clr = Color.green;
-				winCounter++;
-			} 
-			else missCounter++;
+            {
+                clr = Color.green;
+                winCounter++;
+            }
+            else missCounter++;
+
             m_resultImage.color = clr;
-			if(winCounter >=3)
-			{
-				endHack(true);
-				return;
-			}
 
-			if(missCounter > 1)
-			{
-				endHack(false);
-				return;
-			}
+            if (missCounter >= 2)
+            {
+                endHack(false);
+                return;
+            }
 
-			StopCoroutine("hackRoutine");
-			m_Field.ClearField();
-			StartCoroutine(waitRoutine(2f));
+            if (winCounter + missCounter >= 5)
+            {
+                endHack(true);
+                return;
+            }
+
+            m_Field.ClearField();
+            isBreak = true;
         }
+
 
     }
 
-	private void endHack(bool isVictory)
+    private void endHack(bool isVictory)
 	{
 			print(isVictory);
-			StopCoroutine("hackRoutine");
+			StopAllCoroutines();
 			m_Field.ClearField();
 	}
 
-    private IEnumerator hackRoutine()
+    private IEnumerator hackRoutine(float timer)
     {
+		yield return new WaitForSeconds(timer);
+		generateSymbols();
+
         while (true)
         {
             float _timer = 3f;
             while (_timer > 0)
             {
-               	_timer -= Time.deltaTime;
- 				double b;
- 				b = System.Math.Round(_timer,2);
-				m_timer.text = b.ToString();
-				yield return null;
+				if(isBreak)
+				{
+					m_timer.text = "";
+					yield return new WaitForSeconds(2f);
+					isBreak = false;
+					generateSymbols();
+					_timer = 3f;
+				}
+				else
+				{
+               		_timer -= Time.deltaTime;
+ 					double b;
+ 					b = System.Math.Round(_timer,2);
+					m_timer.text = b.ToString();
+					yield return null;
+				}
 
             }
-            m_timer.text = "0";
+			
+            m_timer.text = "";
             missCounter++;
             if (missCounter > 1)
             {
@@ -121,19 +140,10 @@ public class VallabyHackerController : MonoBehaviour
                 break;
             }
 
-			StartCoroutine(waitRoutine(3f));
+			m_Field.ClearField();
+			yield return new WaitForSeconds(2f);
+			generateSymbols();
 
         }
     }
-
-	private IEnumerator waitRoutine(float timer)
-	{
-		yield return new WaitForSeconds(timer);
-		StartCoroutine("hackRoutine");
-		generateSymbols();
-		if(missCounter < 0)
-			missCounter = 0;
-	}
-
-
 }

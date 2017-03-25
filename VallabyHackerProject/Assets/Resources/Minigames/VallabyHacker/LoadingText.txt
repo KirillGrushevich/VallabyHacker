@@ -1,0 +1,13 @@
+.../>>>
+Welcome to 
+Wallaby Electronic System!
+...
+Swipe right if you find a match. 
+Swipe left if you do not. 
+...
+Or use buttons: 
+right for yes, left for no.
+... 
+Please, touch screen to enter your 
+graphical key.
+
