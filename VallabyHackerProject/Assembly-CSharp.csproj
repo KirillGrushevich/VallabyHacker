@@ -55,6 +55,7 @@
      <Compile Include="Assets\Scripts\VallabyHacker\ImageSymbol.cs" />
      <Compile Include="Assets\Scripts\VallabyHacker\LoadText.cs" />
      <Compile Include="Assets\Scripts\VallabyHacker\NumberSymbol.cs" />
+     <Compile Include="Assets\Scripts\VallabyHacker\RandomArray.cs" />
      <Compile Include="Assets\Scripts\VallabyHacker\SymbolBase.cs" />
      <Compile Include="Assets\Scripts\VallabyHacker\VallabyHackerController.cs" />
      <Compile Include="Assets\Scripts\VallabyHacker\VallabyHackerGameField.cs" />
