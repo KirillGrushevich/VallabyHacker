@@ -54,6 +54,21 @@ public class VallabyHackerGameField : MonoBehaviour
         }
     }
 
+    public void ClearField()
+    {
+        foreach(GameObject obj in gameObjects)
+        {
+            Destroy(obj);
+        }
+
+        foreach (GameObject obj in playerObjects)
+        {
+            Destroy(obj);
+        }
+        gameObjects = new List<GameObject>();
+        playerObjects = new List<GameObject>();
+    }
+
     public bool isIsEquals()
     {
         foreach(GameObject fieldObj in gameObjects)
