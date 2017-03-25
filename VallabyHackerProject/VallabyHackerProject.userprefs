@@ -1,18 +1,8 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\VallabyHacker\ChangeImageAlfa.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\VallabyHacker\TopLampManager.cs">
     <Files>
-      <File FileName="Assets\Scripts\VallabyHacker\SymbolBase.cs" Line="15" Column="41" />
-      <File FileName="Assets\Scripts\VallabyHacker\NumberSymbol.cs" Line="12" Column="1" />
-      <File FileName="Assets\Scripts\VallabyHacker\ImageSymbol.cs" Line="14" Column="56" />
-      <File FileName="Assets\Scripts\VallabyHacker\ColorSymbol.cs" Line="25" Column="6" />
-      <File FileName="Assets\Scripts\VallabyHacker\HackSymbol_Color.cs" Line="6" Column="1" />
-      <File FileName="Assets\Scripts\VallabyHacker\HackSymbol.cs" Line="18" Column="11" />
-      <File FileName="Assets\Scripts\VallabyHacker\LoadText.cs" Line="21" Column="1" />
-      <File FileName="Assets\Scripts\VallabyHacker\RandomArray.cs" Line="30" Column="5" />
-      <File FileName="Assets\Scripts\VallabyHacker\NavigationButton.cs" Line="7" Column="13" />
-      <File FileName="Assets\Scripts\Swipe\GameSwipeDetection.cs" Line="56" Column="6" />
-      <File FileName="Assets\Scripts\VallabyHacker\ChangeImageAlfa.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\VallabyHacker\TopLampManager.cs" Line="4" Column="22" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
