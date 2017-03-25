@@ -97,7 +97,7 @@ public class VallabyHackerGameField : MonoBehaviour
             generated.Add(key);
 			while(true)
 			{
-				int newNm = Random.Range(0, 15);
+				int newNm = Random.Range(0, 8);
                 if(generated.Contains(newNm))
                 {
                     continue;
@@ -123,7 +123,7 @@ public class VallabyHackerGameField : MonoBehaviour
             List<int> generated = new List<int>(keys);
             while (true)
             {
-                int newNm = Random.Range(0, 15);
+                int newNm = Random.Range(0, 8);
                 if (generated.Contains(newNm))
                 {
                     continue;

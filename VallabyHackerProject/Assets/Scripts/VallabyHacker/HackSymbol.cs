@@ -10,10 +10,13 @@ public enum HackSymbol {
 	Element6,
 	Element7,
 	Element8,
+	/* 
 	Element9,
+	
 	Element10,
 	Element11,
 	Element12,
 	Element13,
 	Element14
+	*/
 }

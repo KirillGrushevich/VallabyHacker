@@ -10,7 +10,6 @@ public class ImageSymbol : SymbolBase {
 	public override void SetSymbol (HackSymbol symbol)
 	{
 		base.SetSymbol (symbol);
-
 		GetComponent<Image> ().sprite = sprites[(int)symbol];
 	}
 }

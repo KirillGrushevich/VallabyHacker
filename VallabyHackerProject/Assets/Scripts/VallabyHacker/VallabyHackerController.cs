@@ -56,7 +56,7 @@ public class VallabyHackerController : MonoBehaviour
 	{
 		
 
-		m_Field.GenerateStage(m_BaseSymbol.GetComponent<SymbolBase>(), Random.Range(0, 15), stagesEquals[stage]);
+		m_Field.GenerateStage(m_BaseSymbol.GetComponent<SymbolBase>(), Random.Range(0, 8), stagesEquals[stage]);
 		stage++;
 	}
 
