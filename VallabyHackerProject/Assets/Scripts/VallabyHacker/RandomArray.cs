@@ -23,9 +23,10 @@ public static class RandomArray
 					randomBoolArray [i] = true;
 			}
 
-			if (i > 1 && (randomBoolArray [i - 2] == randomBoolArray [i - 1]) && (randomBoolArray [i - 1] == randomBoolArray[i])) 
-			{
-				randomBoolArray [i] = !randomBoolArray [i];
+			if (Random.Range (0, 2) == 0) {
+				if (i > 1 && (randomBoolArray [i - 2] == randomBoolArray [i - 1]) && (randomBoolArray [i - 1] == randomBoolArray [i])) {
+					randomBoolArray [i] = !randomBoolArray [i];
+				}
 			}
 		}
 
