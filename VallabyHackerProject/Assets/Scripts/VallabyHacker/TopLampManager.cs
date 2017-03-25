@@ -11,19 +11,19 @@ public class TopLampManager : MonoBehaviour {
 
 	public void EnableNextLamp (bool state) 
 	{
-		if (state) 
-		{
-			images [currentLamp].color = Color.green;
-		} 
-		else 
-		{
-			images [currentLamp].color = Color.red;
-		}
-
-		images [currentLamp].gameObject.SetActive (true);
-
 		if (currentLamp < images.Length) 
 		{
+			if (state) 
+			{
+				images [currentLamp].color = Color.green;
+			} 
+			else 
+			{
+				images [currentLamp].color = Color.red;
+			}
+
+			images [currentLamp].gameObject.SetActive (true);
+
 			currentLamp++;
 		}
 	}
