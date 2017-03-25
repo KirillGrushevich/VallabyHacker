@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class LoadText : MonoBehaviour {
 
+	public TextAsset inputText;
+
 	private Text text;
 	private string loadText = "Good news evereone!!!\n" +
 		"__________Loading________\n" +
@@ -25,7 +27,14 @@ public class LoadText : MonoBehaviour {
 	{
 		for (int i = 0; i < loadText.Length; i++) 
 		{
-			text.text = loadText.Substring (0, i);
+			if (inputText == null) 
+			{
+				text.text = loadText.Substring (0, i);
+			} 
+			else 
+			{
+				text.text = inputText.text.Substring (0, i);
+			}
 			yield return new WaitForSeconds (.03f);
 		}
 	}
