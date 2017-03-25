@@ -8,7 +8,7 @@ public class FieldElement : MonoBehaviour
 	[SerializeField]
 	private SymbolBase m_Symbol;
 
-	public SymbolBase SymbolBase
+	public SymbolBase Symbol
 	{
 		get{return m_Symbol;}
 		set{m_Symbol = value;}

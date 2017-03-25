@@ -5,6 +5,10 @@ using UnityEngine;
 public abstract class SymbolBase : MonoBehaviour {
 
 	private HackSymbol symbol;
+    public HackSymbol Symbol
+    {
+        get { return symbol; }
+    }
 
 	public virtual void Init (){}
 
