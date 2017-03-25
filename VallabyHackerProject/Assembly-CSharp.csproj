@@ -46,6 +46,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\Swipe\GameSwipeDetection.cs" />
+     <Compile Include="Assets\Scripts\Swipe\GameSwipeTest.cs" />
      <Compile Include="Assets\Scripts\VallabyHacker\ColorSymbol.cs" />
      <Compile Include="Assets\Scripts\VallabyHacker\FieldElement.cs" />
      <Compile Include="Assets\Scripts\VallabyHacker\HackSymbol.cs" />

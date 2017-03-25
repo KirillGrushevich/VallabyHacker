@@ -8,14 +8,11 @@ public class LoadText : MonoBehaviour {
 	public TextAsset inputText;
 
 	private Text text;
-	private string loadText = "Good news evereone!!!\n" +
-		"__________Loading________\n" +
-		"I make his load stuff!!\n" +
-		"Yyyyyyyeeepi!!\n" +
-		"asdr34543&@sefjfs_23!!\n" +
-		"23456_34543+@4535\n"+
-		"sefwerrt345534\n"+
-		"Seft test is complited";
+	private string loadText = "Loading...\n" +
+	                          "\n" +
+	                          ".../»\n" +
+	                          "Welcome to Wallaby Electronic System!\n" +
+	                          "Please, enter your graphical password.\n...";
 
 	void Start () 
 	{
