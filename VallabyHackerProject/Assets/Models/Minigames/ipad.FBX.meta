@@ -6,10 +6,29 @@ ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
     100000: //RootNode
+    100002: Box001
+    100004: Btn_left
+    100006: Btn_power
+    100008: Btn_right
     400000: //RootNode
+    400002: Box001
+    400004: Btn_left
+    400006: Btn_power
+    400008: Btn_right
     2300000: //RootNode
+    2300002: Box001
+    2300004: Btn_left
+    2300006: Btn_power
+    2300008: Btn_right
     3300000: //RootNode
+    3300002: Box001
+    3300004: Btn_left
+    3300006: Btn_power
+    3300008: Btn_right
     4300000: Box001
+    4300002: Btn_right
+    4300004: Btn_left
+    4300006: Btn_power
     7400000: Take 001
     9500000: //RootNode
   materials:
