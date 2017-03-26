@@ -39,6 +39,8 @@ public class VallabyHackerController : MonoBehaviour
         GameSwipeDetection.SwipeAction += swipeEvent;		
 
 		stagesEquals = RandomArray.GetRandomArray(10);
+
+		hackCoroutine =  StartCoroutine(hackRoutine(0.5f));
         
 	}
 
@@ -50,10 +52,6 @@ public class VallabyHackerController : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
 	{
-		if(hackCoroutine == null && Input.GetMouseButtonDown(0))
-		{
-			hackCoroutine =  StartCoroutine(hackRoutine(0.5f));
-		}
 
 		if(isEnded && Input.GetMouseButtonDown(0))
 		{

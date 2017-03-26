@@ -12,19 +12,33 @@ public class LoadText : MonoBehaviour
 	private bool isDestroyOnTouch;
 
 	[SerializeField]
+	private GameObject m_ActivateObject;
+
+	[SerializeField]
 	private float m_delayTime = 1.5f;
+
+	private void Awake()
+	{
+					if(isDestroyOnTouch && m_ActivateObject)
+				m_ActivateObject.SetActive(false);
+	}
 
 	void OnEnable () 
 	{
 		text = GetComponent<Text> ();
 		StartCoroutine (AnimateText ());
+
+
 	}
 
 	void Update()
 	{
 		if(isDestroyOnTouch && Input.GetMouseButtonDown(0))
 		{
+			if(m_ActivateObject)
+				m_ActivateObject.SetActive(true);
 			Destroy(gameObject);
+
 		}
 	}
 
