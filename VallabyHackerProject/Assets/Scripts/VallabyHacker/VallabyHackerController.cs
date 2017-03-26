@@ -1,7 +1,7 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class VallabyHackerController : MonoBehaviour 
 {
@@ -26,6 +26,8 @@ public class VallabyHackerController : MonoBehaviour
 	Coroutine hackCoroutine;
 	bool isBreak;
 
+	bool isEnded;
+
 	// Use this for initialization
 	private void Start () 
 	{
@@ -33,6 +35,7 @@ public class VallabyHackerController : MonoBehaviour
 		missCounter = 0;
 		winCounter = 0;
 		stage = 0;
+		isEnded = false;
         GameSwipeDetection.SwipeAction += swipeEvent;		
 
 		stagesEquals = RandomArray.GetRandomArray(10);
@@ -50,6 +53,11 @@ public class VallabyHackerController : MonoBehaviour
 		if(hackCoroutine == null && Input.GetMouseButtonDown(0))
 		{
 			hackCoroutine =  StartCoroutine(hackRoutine(0.5f));
+		}
+
+		if(isEnded && Input.GetMouseButtonDown(0))
+		{
+			SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
 		}		
 	}
 
@@ -151,6 +159,7 @@ public class VallabyHackerController : MonoBehaviour
 			StopAllCoroutines();
 			m_timer.enabled = false;
 			m_Field.ActivateResultText(false, true);
+			isEnded = true;
             return true;
         }
 
@@ -159,7 +168,7 @@ public class VallabyHackerController : MonoBehaviour
             endHack(true);
 			m_Lamps.SetEndGameLight(true);
 			m_timer.enabled = false;
-			m_Field.ActivateResultText(true, true);
+			m_Field.ActivateResultText(true, true);			
             return true;
         }
         return false;
