@@ -21,7 +21,6 @@ public class ChangeImageAlfa : MonoBehaviour {
 		{
 			color.a -= 1.5f * Time.deltaTime;
 			GetComponent<Image> ().color = color;
-			Debug.Log (color.a);
 			counter -= Time.deltaTime;
 			yield return null;
 		}
@@ -34,6 +33,6 @@ public class ChangeImageAlfa : MonoBehaviour {
 			yield return null;
 		}
 
-		DestroyObject (this);
+		Destroy(gameObject);
 	}
 }

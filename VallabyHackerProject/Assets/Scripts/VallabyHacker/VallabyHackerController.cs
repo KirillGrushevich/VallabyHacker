@@ -50,8 +50,7 @@ public class VallabyHackerController : MonoBehaviour
 		if(hackCoroutine == null && Input.GetMouseButtonDown(0))
 		{
 			hackCoroutine =  StartCoroutine(hackRoutine(0.5f));
-		}
-		
+		}		
 	}
 
 	private void generateSymbols()
@@ -67,18 +66,18 @@ public class VallabyHackerController : MonoBehaviour
     {
         if (!isBreak)
         {
-            bool isEquals = m_Field.isIsEquals();
+            bool isEquals = m_Field.IsEquals();
             bool isComplete = false;
             if (dir < 0 && isEquals || dir > 0 && !isEquals)
             {
                 isComplete = true;
                 winCounter++;
-				m_Field.ActivateResultText(true);
+				m_Field.ActivateResultText(true, false);
             }
             else 
 			{
 				missCounter++;
-				m_Field.ActivateResultText(false);
+				m_Field.ActivateResultText(false, false);
 			}
 
             m_Lamps.EnableNextLamp(isComplete);
@@ -88,18 +87,16 @@ public class VallabyHackerController : MonoBehaviour
                 return;
             }
 
-            m_Field.ClearField();
+            m_Field.ClearField(false);
             isBreak = true;
         }
-
-
     }
 
     private void endHack(bool isVictory)
 	{
 			print(isVictory);
 			StopAllCoroutines();
-			m_Field.ClearField();
+			m_Field.ClearField(false);
 	}
 
     private IEnumerator hackRoutine(float timer)
@@ -133,12 +130,12 @@ public class VallabyHackerController : MonoBehaviour
 
             m_timer.text = "";
             missCounter++;
-			m_Field.ActivateResultText(false);
+			m_Field.ActivateResultText(false, false);
 
             if (!isEnd())
             {
                 m_Lamps.EnableNextLamp(false);
-                m_Field.ClearField();
+                m_Field.ClearField(false);
                 yield return new WaitForSeconds(2f);
                 generateSymbols();
             }
@@ -152,7 +149,8 @@ public class VallabyHackerController : MonoBehaviour
             endHack(false);
 			m_Lamps.SetEndGameLight(false);
 			StopAllCoroutines();
-			m_timer.text = "";
+			m_timer.enabled = false;
+			m_Field.ActivateResultText(false, true);
             return true;
         }
 
@@ -160,6 +158,8 @@ public class VallabyHackerController : MonoBehaviour
         {
             endHack(true);
 			m_Lamps.SetEndGameLight(true);
+			m_timer.enabled = false;
+			m_Field.ActivateResultText(true, true);
             return true;
         }
         return false;

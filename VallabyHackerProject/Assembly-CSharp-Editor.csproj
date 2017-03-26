@@ -48,6 +48,8 @@
   <ItemGroup>
      <Compile Include="Assets\VSCode\Plugins\Editor\VSCode.cs" />
      <None Include="Assets\Resources\Minigames\VallabyHacker\ErrorText.txt" />
+     <None Include="Assets\Resources\Minigames\VallabyHacker\EndGameWinText.txt" />
+     <None Include="Assets\Resources\Minigames\VallabyHacker\EndGameDefeateText.txt" />
      <None Include="Assets\Resources\Minigames\VallabyHacker\LoadingText.txt" />
      <None Include="Assets\Resources\Minigames\VallabyHacker\CompleteText.txt" />
  <Reference Include="UnityEditor.Advertisements">

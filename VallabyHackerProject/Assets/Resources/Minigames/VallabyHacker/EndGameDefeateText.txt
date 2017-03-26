@@ -1,0 +1,5 @@
+.../>>>
+Authorization failed.
+Access denied.
+Touch screen to try again.
+...

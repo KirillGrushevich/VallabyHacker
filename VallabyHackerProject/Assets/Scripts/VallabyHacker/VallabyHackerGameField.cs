@@ -18,6 +18,10 @@ public class VallabyHackerGameField : MonoBehaviour
     private GameObject m_WinText;
     [SerializeField]
     private GameObject m_LooseText;
+    [SerializeField]
+    private GameObject m_EndGameWinText;
+    [SerializeField]
+    private GameObject m_EndGameDefeateText;
 
     private List<GameObject> gameObjects = new List<GameObject>();
     private List<GameObject> playerObjects = new List<GameObject>();
@@ -29,18 +33,7 @@ public class VallabyHackerGameField : MonoBehaviour
 
     public void GenerateStage(SymbolBase symbol, int key, bool isUnique)
 	{
-        m_Background.SetActive(true);
-        foreach(GameObject obj in gameObjects)
-        {
-            Destroy(obj);
-        }
-
-        foreach (GameObject obj in playerObjects)
-        {
-            Destroy(obj);
-        }
-        gameObjects = new List<GameObject>();
-        playerObjects = new List<GameObject>();
+        ClearField(true);
 
         int[] numbers = randomizer(m_GameElements.Length, key);
 
@@ -68,23 +61,25 @@ public class VallabyHackerGameField : MonoBehaviour
         }
     }
 
-    public void ClearField()
+    public void ClearField(bool isActive)
     {
-         m_Background.SetActive(false);
+         m_Background.SetActive(isActive);
         foreach(GameObject obj in gameObjects)
         {
-            Destroy(obj);
+            if(!obj.GetComponent<ChangeImageAlfa>())
+               Destroy(obj);
         }
 
         foreach (GameObject obj in playerObjects)
         {
-            Destroy(obj);
+            if(!obj.GetComponent<ChangeImageAlfa>())
+               Destroy(obj);
         }
         gameObjects = new List<GameObject>();
         playerObjects = new List<GameObject>();
     }
 
-    public bool isIsEquals()
+    public bool IsEquals()
     {
         foreach(GameObject fieldObj in gameObjects)
         {
@@ -94,7 +89,11 @@ public class VallabyHackerGameField : MonoBehaviour
                 SymbolBase f = fieldObj.GetComponent<SymbolBase>();
 
                 if (p.Symbol == f.Symbol)
+                {
+                    playerObj.AddComponent<ChangeImageAlfa>();
+                    fieldObj.AddComponent<ChangeImageAlfa>();
                     return true;
+                }                    
             }
         }
 
@@ -152,19 +151,40 @@ public class VallabyHackerGameField : MonoBehaviour
         return arr;
     }
 
-    public void ActivateResultText(bool isPositive)
+    public void ActivateResultText(bool isPositive, bool isEnd)
     {
-        if(isPositive)
+        if (!isEnd)
         {
-            m_WinText.SetActive(true);
-            DisableOnTime dis = m_WinText.AddComponent<DisableOnTime>();
-            dis.disableAt(2f);
+            if (isPositive)
+            {
+                m_WinText.SetActive(true);
+                DisableOnTime dis = m_WinText.AddComponent<DisableOnTime>();
+                dis.disableAt(2f);
+                return;
+            }
+
+            m_LooseText.SetActive(true);
+            DisableOnTime _dis = m_LooseText.AddComponent<DisableOnTime>();
+            _dis.disableAt(2f);
             return;
         }
-        
-        m_LooseText.SetActive(true);
-        DisableOnTime _dis = m_LooseText.AddComponent<DisableOnTime>();
-        _dis.disableAt(2f);
+
+        m_LooseText.SetActive(false);
+        m_WinText.SetActive(false);
+
+        if (isPositive)
+        {
+            m_EndGameWinText.SetActive(true);
+            DisableOnTime dis = m_EndGameWinText.AddComponent<DisableOnTime>();
+            dis.disableAt(9999f);
+            return;
+        }
+
+        m_EndGameDefeateText.SetActive(true);
+        DisableOnTime _disa = m_EndGameDefeateText.AddComponent<DisableOnTime>();
+        _disa.disableAt(9999f);
+
+
     }
 
 
