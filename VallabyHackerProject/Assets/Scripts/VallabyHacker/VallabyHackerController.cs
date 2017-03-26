@@ -100,7 +100,6 @@ public class VallabyHackerController : MonoBehaviour
 
     private void endHack(bool isVictory)
 	{
-			print(isVictory);
 			StopAllCoroutines();
 			m_Field.ClearField(false);
 	}
