@@ -53,9 +53,19 @@ public class TopLampManager : MonoBehaviour {
 				yield return new WaitForSeconds(0.1f);
 
             }
+
+			foreach (Image _image in images) 
+			{
+				_image.gameObject.SetActive(false);
+				yield return new WaitForSeconds(0.1f);
+			}
+
             yield return null;
         }
-
     }
 
+	void Start()
+	{
+		SetEndGameLight (true);
+	}
 }

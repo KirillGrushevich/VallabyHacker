@@ -2,7 +2,12 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\VallabyHacker\TopLampManager.cs">
     <Files>
-      <File FileName="Assets\Scripts\VallabyHacker\TopLampManager.cs" Line="4" Column="22" />
+      <File FileName="Assets\Scripts\VallabyHacker\TopLampManager.cs" Line="58" Column="3" />
+      <File FileName="Assets\Scripts\VallabyHacker\LoadText.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\VallabyHacker\ChangeImageAlfa.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\VallabyHacker\ColorSymbol.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\VallabyHacker\FieldElement.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\VallabyHacker\HackSymbol.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
