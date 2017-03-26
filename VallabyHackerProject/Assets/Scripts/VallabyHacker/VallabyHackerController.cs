@@ -154,7 +154,7 @@ public class VallabyHackerController : MonoBehaviour
         {
             endHack(false);
 			m_Lamps.SetEndGameLight(false);
-			StopAllCoroutines();
+			//StopAllCoroutines();
 			m_timer.enabled = false;
 			m_Field.ActivateResultText(false, true);
 			isEnded = true;

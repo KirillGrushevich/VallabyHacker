@@ -9,6 +9,8 @@ public class GameSwipeDetection : MonoBehaviour
 
     public static Action<float> SwipeAction;
 
+
+
     void Update()
     {
         int direction = 0;
@@ -30,7 +32,7 @@ public class GameSwipeDetection : MonoBehaviour
                     if(!isSwiped)
                     {
                         float swipeDistHorizontal = (new Vector3(touch.position.x, 0, 0) - new Vector3(startPos.x, 0, 0)).magnitude;
-                        if (swipeDistHorizontal > minSwipeDistX)
+					if (swipeDistHorizontal > minSwipeDistX /100f * Screen.width)
                         {
                             direction = (int)Mathf.Sign(touch.position.x - startPos.x) * -1;
                             SwipeAction.Invoke(direction);
