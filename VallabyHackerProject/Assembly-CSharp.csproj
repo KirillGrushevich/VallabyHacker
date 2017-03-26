@@ -59,6 +59,7 @@
      <Compile Include="Assets\Scripts\VallabyHacker\LoadText.cs" />
      <Compile Include="Assets\Scripts\VallabyHacker\NavigationButton.cs" />
      <Compile Include="Assets\Scripts\VallabyHacker\NumberSymbol.cs" />
+     <Compile Include="Assets\Scripts\VallabyHacker\PauseButton.cs" />
      <Compile Include="Assets\Scripts\VallabyHacker\RandomArray.cs" />
      <Compile Include="Assets\Scripts\VallabyHacker\SymbolBase.cs" />
      <Compile Include="Assets\Scripts\VallabyHacker\TopLampManager.cs" />
