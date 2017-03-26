@@ -25,6 +25,9 @@ public class PauseButton : MonoBehaviour {
 		{
 			Time.timeScale = 1;
 			isPressPause = false;
+			backgroundPauseImg.gameObject.SetActive (false);
+			exitGameButton.gameObject.SetActive (false);
+			visitOurPageButton.gameObject.SetActive (false);
 		}
 	}
 
