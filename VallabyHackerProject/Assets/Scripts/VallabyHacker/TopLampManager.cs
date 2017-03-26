@@ -63,9 +63,4 @@ public class TopLampManager : MonoBehaviour {
             yield return null;
         }
     }
-
-	void Start()
-	{
-		SetEndGameLight (true);
-	}
 }
