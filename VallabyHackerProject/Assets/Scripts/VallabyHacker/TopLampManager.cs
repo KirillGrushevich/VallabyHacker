@@ -38,29 +38,45 @@ public class TopLampManager : MonoBehaviour {
     {
         while (true)
         {
-            foreach (Image _image in images)
-            {
-                if (state)
-                {
-                    _image.color = Color.green;
-                }
-                else
-                {
-                    _image.color = Color.red;
-                }
+			if (state) {
+				foreach (Image _image in images) {
+					_image.color = Color.green;
+					_image.gameObject.SetActive (true);
 
-                _image.gameObject.SetActive(true);
-				yield return new WaitForSeconds(0.1f);
+					yield return new WaitForSeconds (0.05f);
+				}
 
-            }
+				foreach (Image _image in images) {
+					_image.gameObject.SetActive (false);
+					yield return new WaitForSeconds (0.05f);
+				}
+			} else {
+				for (int i = 0; i < 2; i++) 
+				{
+					foreach (Image _image in images) 
+					{
+						_image.color = Color.red;
+						_image.gameObject.SetActive (true);
+					}
 
-			foreach (Image _image in images) 
-			{
-				_image.gameObject.SetActive(false);
-				yield return new WaitForSeconds(0.1f);
+					yield return new WaitForSeconds (0.1f);
+					
+					foreach (Image _image in images) 
+					{
+						_image.gameObject.SetActive (false);
+					}
+
+					yield return new WaitForSeconds (0.1f);
+				}
+
+				yield return new WaitForSeconds (0.5f);
 			}
 
             yield return null;
         }
     }
+
+	void Start(){
+		SetEndGameLight (false);
+	}
 }
