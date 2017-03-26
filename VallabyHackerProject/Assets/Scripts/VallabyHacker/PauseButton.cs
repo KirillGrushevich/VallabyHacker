@@ -8,6 +8,7 @@ public class PauseButton : MonoBehaviour {
 	public Image backgroundPauseImg;
 	public Button exitGameButton;
 	public Button visitOurPageButton;
+	public Button rateUsButton;
 
 	private bool isPressPause = false;
 
@@ -19,6 +20,7 @@ public class PauseButton : MonoBehaviour {
 			backgroundPauseImg.gameObject.SetActive (true);
 			exitGameButton.gameObject.SetActive (true);
 			visitOurPageButton.gameObject.SetActive (true);
+			rateUsButton.gameObject.SetActive (true);
 			isPressPause = true;
 		} 
 		else 
@@ -28,6 +30,7 @@ public class PauseButton : MonoBehaviour {
 			backgroundPauseImg.gameObject.SetActive (false);
 			exitGameButton.gameObject.SetActive (false);
 			visitOurPageButton.gameObject.SetActive (false);
+			rateUsButton.gameObject.SetActive (false);
 		}
 	}
 
@@ -39,5 +42,10 @@ public class PauseButton : MonoBehaviour {
 	public void OnClickVisitButton()
 	{
 		Application.OpenURL ("https://vk.com/away.php?to=https%3A%2F%2Fwww.facebook.com%2FOutback-Defender-1191809544270400%2F");
+	}
+
+	public void OnClickRateButton()
+	{
+//		Application.OpenURL ();
 	}
 }
